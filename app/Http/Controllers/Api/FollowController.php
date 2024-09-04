@@ -35,16 +35,16 @@ use ApiTrait;
         //send mail notification
         $followinguser=User::where("id",$request->following_id)->first();
 
-        // SendFollowingMessageJob::dispatch($followinguser,$user);
+        SendFollowingMessageJob::dispatch($followinguser,$user);
 
 
-        // use firebase notification
+        // use firebase notification i test it and it works
         $body=auth()->user()->name. "want to follow you";
-        // dd($followinguser->fcm);
         ApiNotificationService::apiNotification($followinguser->fcm, $body,"send realtime notification");
-// using socket io
 
-            // broadcast(new FollowingUser( $user,$followinguser));
+
+        // using socket io i tried to do it but i didn,t test it
+        broadcast(new FollowingUser( $user,$followinguser));
         return  $this->apiResponse(message:__("user follows successfully"));
     }
 
