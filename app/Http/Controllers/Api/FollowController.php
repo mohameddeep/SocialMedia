@@ -39,12 +39,16 @@ use ApiTrait;
 
 
         // use firebase notification i test it and it works
+
         $body=auth()->user()->name. "want to follow you";
-        ApiNotificationService::apiNotification($followinguser->fcm, $body,"send realtime notification");
+        // ApiNotificationService::apiNotification($followinguser->fcm, $body,"send realtime notification");
 
 
         // using socket io i tried to do it but i didn,t test it
-        broadcast(new FollowingUser( $user,$followinguser));
+
+        event(new FollowingUser( $user,$followinguser));
+
+
         return  $this->apiResponse(message:__("user follows successfully"));
     }
 
