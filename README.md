@@ -6,11 +6,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 </p>
 
-## About Laravel
+## Laravel Project
 
 1- create new laravel project 
 
-2-instal spatia translation for multi languge and create middleware for translation
+2-install spatia translation for multi languge and create middleware for translation
 
 3-install google clientApi for firbase realtime notification
 
